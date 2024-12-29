@@ -1,21 +1,67 @@
-.login_profile_button {
+.login_profile_button, .header_menu_button {
+  position: relative;
   display: flex;
   flex-direction: row;
   gap: 4px;
+  border-radius: 0 0 8px 0;
+  transition: all 0.2s ease-in-out;
 }
 
-.login_profile_button:hover {
-  background-color: var(--hoverButton)
+.login_profile_button::after, .header_menu_button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 8px 0;
+  background: var(--button-gradient-hover);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: -1;
+}
+
+.login_profile_button:hover::after, .header_menu_button:hover::after {
+  opacity: 1;
+}
+
+.header_menu_button::after {
+  border-radius: 0 0 0 8px;
 }
 
 .header_props {
   padding: 5px 60px;
   border-radius: 8px;
-  transition: background-color 0.2s ease-in-out;
+  background: #d1256ba3;
+  font-weight: bold;
+  font-size: x-large;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  transition: all .2s ease-in-out;
+  align-items: center;
+  justify-content: center;
 }
 
-.left_menu_root.hidden {
+.header_close_button {
+  background: var(--button-gradient);
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  width: fit-content;
+  cursor: pointer;
+  outline: transparent;
+  transition: color 0.2s ease-in-out;
+}
+
+.header_close_button:hover {
+  background: var(--button-gradient-hover);
+  outline: var(--outline-pink);
+}
+
+.left_menu_root.hide {
   visibility: hidden;
+  background-color: transparent;
 }
 
 .left_menu_root {
@@ -25,16 +71,28 @@
   height: 100vh;
   width: 100%;
   top: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .left_menu_sub {
   height: 100%;
   width: 400px;
   padding: 10px;
-  background-color: var(--hoverButton);
+  transition: all 0.3s ease-in-out;
+  transform: translateX(0%);
+  border-radius: 0 18px 18px 0;
+}
+
+.left_menu_sub.hide {
+  transform: translateX(-100%);
 }
 
 .header_props:hover {
+  background-color: var(--hoverButton);
+  color: white;
+}
+
+.header_props.active {
   background-color: var(--hoverButton);
 }
 

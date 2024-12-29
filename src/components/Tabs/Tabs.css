@@ -1,3 +1,12 @@
 .utabs.active {
-    outline: pink 1px solid;
+    outline: var(--outline-pink);
+    background-color: var(--activeButton);
+    border-radius: 8px;
+    color: white;
+}
+
+.utabs {
+    background: linear-gradient(45deg, #ffbe00, transparent);
+    border-radius: 8px;
+    color: #c5c5c5;
 }

@@ -5,7 +5,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --hoverButton: #ed6da3;
+  --hoverButton: rgba(16, 165, 153, 0.48);
+  --activeButton: rgba(16, 165, 153, 0.48);
+  --outline-pink: pink 1px solid;
+  --button-gradient: linear-gradient(45deg, #ef6d5b, #ff448b);
+  --button-gradient-hover: linear-gradient(45deg, #f16652, #dc3a78);
+}
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 @media (prefers-color-scheme: dark) {
