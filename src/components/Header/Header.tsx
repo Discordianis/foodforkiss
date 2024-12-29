@@ -70,6 +70,7 @@ const Header:React.FC = () => {
                         <div className={'mb-4 mt-2 header_menu_icon'}>
                             <Image src={iconFFF} alt={''} />
                         </div>
+
                         <div className={'flex flex-col gap-2.5'}>
                             <Tabs isActive={tab === ''} onClick={() => setTab('')}>
                                 <Link href={'/'} className={`header_props ${tab === '' ? 'active' : ''}`} onClick={() => setMenu(false)}>
