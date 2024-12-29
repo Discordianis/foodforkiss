@@ -1,36 +1,16 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FFF - Family Friends Food
 
-## Getting Started
+**FFF** — это проект, вдохновленный старой новостью о том, как человек создал сайт для себя и своей девушки, на котором они выбирали еду на завтрак, обед или ужин в обмен на поцелуи. Я решил сделать нечто похожее, но с добавлением личных профилей, неограниченным числом членов семьи и возможностью использовать разные способы оплаты — даже реальные деньги!
 
-First, run the development server:
+Основная концепция сайта заключается в том, что пользователи могут «заказывать» еду, а как «плату» использовать что угодно — от поцелуев до более серьезных компенсаций. Конечно, полноценной системы оплаты не будет, так как сайт предназначен для семей и друзей. Однако каждый участник сможет видеть свои «долги», если он что-то "заказал". Эти долги можно погасить, и как только это произойдет, повар сможет снять долг с пользователя.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Дизайн и стилистика сайта вдохновлены такими играми, как **DDLC** и **MiSide**, но я готов в любой момент полностью изменить стиль. Разработка только началась, и я надеюсь завершить проект в ближайшее время.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Основной стек
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **React**
+- **Next.js 15** (чисто для практики)
+- **TypeScript**
+- **Tailwind CSS**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Список технологий будет расширяться по мере развития проекта.
