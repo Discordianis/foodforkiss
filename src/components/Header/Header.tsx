@@ -8,8 +8,9 @@ import './Header.css'
 import Tabs from "@/components/Tabs/Tabs";
 import menubg from "@/assets/menu_bg_trans.png"
 import headerbg from "@/assets/textbox1.png"
-import iconFFF from '@/assets/FFF icon.png'
-import menuButton from '@/assets/menuButton.png'
+import iconFFF from '../../../public/FFF icon.png'
+import menuButton from '../../../public/menuButton.png'
+
 import {usePathname} from "next/navigation";
 
 const Header:React.FC = () => {
