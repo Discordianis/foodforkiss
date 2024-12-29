@@ -3,13 +3,13 @@
 import React, {useEffect, useRef, useState} from "react";
 import {UserAccountIcon} from "hugeicons-react";
 import Image from "next/image";
-import menuButton from '../../../public/menuButton.png'
 import Link from "next/link";
 import './Header.css'
 import Tabs from "@/components/Tabs/Tabs";
 import menubg from "@/assets/menu_bg_trans.png"
 import headerbg from "@/assets/textbox1.png"
-import iconFFF from '../../../public/FFF icon.png'
+import iconFFF from '@/assets/FFF icon.png'
+import menuButton from '@/assets/menuButton.png'
 import {usePathname} from "next/navigation";
 
 const Header:React.FC = () => {
