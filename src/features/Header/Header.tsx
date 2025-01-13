@@ -12,13 +12,19 @@ import iconFFF from '../../../public/FFF icon.png'
 import menuButton from '../../../public/menuButton.png'
 
 import {usePathname} from "next/navigation";
+import logged from "@/store/logged";
+import {observer} from "mobx-react-lite";
 
-const Header:React.FC = () => {
+const Header:React.FC = observer(() => {
 
     const params = usePathname()
     const [tab, setTab] = useState<string>('')
     const [menu, setMenu] = useState<boolean>(false)
     const subMenuRef = useRef<HTMLDivElement | null>(null)
+
+    useEffect(() => {
+        logged.getToken()
+    }, []);
 
     useEffect(() => {
         if (params) {
@@ -53,14 +59,14 @@ const Header:React.FC = () => {
             headerElem.style.background = `linear-gradient(rgb(187 51 110), rgb(255 0 139 / 44%)) 0% 0% / cover, url("${headerbg.src}")`;
             headerElem.style.backgroundSize = `cover`
             headerElem.style.backgroundBlendMode = 'multiply'
-            headerElem.style.backgroundPositionY = '-62px'
+            headerElem.style.backgroundPositionY = '-57px'
         }
     }, []);
 
     return (
-        <header className={'sticky top-0 flex flex-row justify-between bg-pink-300/80 rounded-b-lg'} id={'header'}>
+        <header id={'header'}>
             <div>
-                <div onClick={() => setMenu(true)} className={'py-1.5 px-2.5 mr-2 cursor-pointer header_menu_button'}>
+                <div onClick={() => setMenu(true)} className={'header_menu_button'}>
                     <Image src={menuButton} alt={''} height={50}/>
                 </div>
                 <div className={`left_menu_root ${menu ? '' : 'hide'}`}>
@@ -68,11 +74,11 @@ const Header:React.FC = () => {
                         <div onClick={() => setMenu(false)} className={'header_close_button'}>
                             <span>Закрыть</span>
                         </div>
-                        <div className={'mb-4 mt-2 header_menu_icon'}>
+                        <div className={'header_menu_icon'}>
                             <Image src={iconFFF} alt={''} />
                         </div>
 
-                        <div className={'flex flex-col gap-2.5'}>
+                        <div className={'header_menu_utabs'}>
                             <Tabs isActive={tab === ''} onClick={() => setTab('')}>
                                 <Link href={'/'} className={`header_props ${tab === '' ? 'active' : ''}`} onClick={() => setMenu(false)}>
                                     <span>Главная</span>
@@ -99,18 +105,29 @@ const Header:React.FC = () => {
             </div>
 
             <div>
-                <Link href={'/login'} className={'py-1.5 h-full px-3 ml-2 flex justify-center items-center cursor-pointer login_profile_button'}>
-                    <div className={'flex gap-1.5'}>
+                <Link href={logged.token ? '/profile' : '/login'} className={logged.token ? 'header_profile_button' : 'header_login_button'}>
+                    {logged.token ?
                         <div>
-                            <UserAccountIcon color={'white'}/>
+                            <div>
+                                <Image src={'/defaultAvatar.png'} alt={''} width={56} height={56}/>
+                            </div>
+                            <div>
+                                <span>MrZaxter</span>
+                            </div>
                         </div>
+                        :
                         <div>
-                            <span>Войти</span>
+                            <div>
+                                <UserAccountIcon color={'white'}/>
+                            </div>
+                            <div>
+                                <span>Войти</span>
+                            </div>
                         </div>
-                    </div>
+                    }
                 </Link>
             </div>
         </header>
     )
-}
+})
 export default Header

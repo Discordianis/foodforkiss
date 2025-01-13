@@ -1,4 +1,4 @@
-.login_profile_button, .header_menu_button {
+.header_login_button, .header_profile_button, .header_menu_button {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -7,7 +7,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.login_profile_button::after, .header_menu_button::after {
+.header_login_button::after, .header_profile_button::after, .header_menu_button::after {
   content: '';
   position: absolute;
   top: 0;
@@ -21,8 +21,38 @@
   z-index: -1;
 }
 
-.login_profile_button:hover::after, .header_menu_button:hover::after {
+.header_login_button:hover::after, .header_profile_button:hover::after, .header_menu_button:hover::after {
   opacity: 1;
+}
+
+.header_menu_button {
+  padding: 3px 6px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.header_login_button {
+  padding: 6px 12px;
+  margin-left: 8px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header_profile_button {
+  padding: 0 12px 0 0;
+  margin-left: 8px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header_profile_button img {
+  border-radius: 0 25px 25px 0;
 }
 
 .header_menu_button::after {
@@ -96,3 +126,21 @@
   background-color: var(--hoverButton);
 }
 
+.header_menu_icon {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.header_menu_utabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header_profile_button > div, .header_login_button > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  gap: 6px;
+}
