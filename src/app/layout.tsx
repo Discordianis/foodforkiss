@@ -15,7 +15,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
                 <div className="main_layout">
                     {children}
                 </div>
-                <div className={'background'} style={{background: 'url("/background.jpg")', backgroundSize: 'cover', backgroundPosition: 'center'}}/>
+                <div className={'background'} style={{background: 'url("/background.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', position: 'fixed'}}/>
             </body>
         </html>
     );

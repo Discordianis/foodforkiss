@@ -1,8 +1,11 @@
 import React from "react";
+import Dishes from "@/features/Dishes/Dishes";
 
 const Food:React.FC = () => {
     return (
-        <p>Тут еда</p>
+        <div>
+            <Dishes></Dishes>
+        </div>
     )
 }
 export default Food

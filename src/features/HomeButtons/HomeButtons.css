@@ -35,6 +35,10 @@
     transition: all 0.2s ease-in-out;
 }
 
+.home_main_buttons img {
+    object-fit: contain;
+}
+
 .home_main_buttons > a:hover img, .home_main_buttons > a:hover span {
     transform: scale(1.05);
 }

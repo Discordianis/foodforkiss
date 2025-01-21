@@ -1,7 +1,7 @@
 'use client'
 
 import React, {useEffect, useRef, useState} from "react";
-import {UserAccountIcon} from "hugeicons-react";
+import {ShoppingCart01Icon, UserAccountIcon} from "hugeicons-react";
 import Image from "next/image";
 import Link from "next/link";
 import './Header.css'
@@ -14,6 +14,7 @@ import menuButton from '../../../public/menuButton.png'
 import {usePathname} from "next/navigation";
 import logged from "@/store/logged";
 import {observer} from "mobx-react-lite";
+import cartCount from "@/store/cart";
 
 const Header:React.FC = observer(() => {
 
@@ -104,12 +105,18 @@ const Header:React.FC = observer(() => {
                 </div>
             </div>
 
-            <div>
+            <div className={'header_right'}>
+                <Link href={`/cart`} className={'shopping_cart_icon'}>
+                    <ShoppingCart01Icon color={'white'}/>
+                    {cartCount.cartCount !== 0 &&
+                        <div>{cartCount.cartCount}</div>
+                    }
+                </Link>
                 <Link href={logged.token ? '/profile' : '/login'} className={logged.token ? 'header_profile_button' : 'header_login_button'}>
                     {logged.token ?
                         <div>
                             <div>
-                                <Image src={'/defaultAvatar.png'} alt={''} width={56} height={56}/>
+                                <Image src={'/defaultAvatar.png'} alt={''} width={45} height={45}/>
                             </div>
                             <div>
                                 <span>MrZaxter</span>
